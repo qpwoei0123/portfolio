@@ -47,13 +47,13 @@ header {
 }
 
 header .inner {
-  padding: 30px 50px 0;
+  padding: 30px 50px;
   .logo {
     width: 150px;
     display: flex;
     justify-content: space-between;
+    gap: 2px;
     span {
-      padding: 10px;
       img {
         width: 100%;
       }
@@ -120,13 +120,51 @@ header .gnb {
       transform: translateY(0px);
     }
     li:nth-child(2) a {
-      transition-delay: 0.1s;
+      transition-delay: 0.3s;
     }
     li:nth-child(3) a {
-      transition-delay: 0.2s;
+      transition-delay: 0.5s;
     }
     li:nth-child(4) a {
-      transition-delay: 0.3s;
+      transition-delay: 0.7s;
+    }
+  }
+}
+
+/* visual */
+.visual {
+  .inner {
+    display: grid;
+    height: 100vh;
+    padding: 25px 50px;
+    box-sizing: border-box;
+    grid-template-rows: auto 1fr auto;
+    .mainText {
+      max-width: fit-content;
+      font-weight: normal;
+      font-size: 80px;
+      margin-left: auto;
+      line-height: 0.9;
+      letter-spacing: -2px;
+    }
+    .subText {
+      font-weight: normal;
+      font-size: 20px;
+      align-self: flex-end;
+      margin-bottom: 30px;
+      span {
+        color: #585858;
+      }
+    }
+  }
+  .logoWrap {
+    display: flex;
+    justify-content: center;
+    span {
+      width: 20%;
+      img {
+        width: 100%;
+      }
     }
   }
 }
