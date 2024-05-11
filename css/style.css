@@ -381,6 +381,101 @@ header .gnb {
   }
 }
 
+/* con4 */
+.con4 {
+  .mainTextBox {
+    position: relative;
+    span {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .title {
+      font-size: 120px;
+      line-height: 1;
+      letter-spacing: -5px;
+      overflow: hidden;
+      i {
+        display: block;
+      }
+    }
+    .title.b {
+      text-align: center;
+    }
+    .title.c {
+      text-align: right;
+    }
+    .in {
+      display: flex;
+      justify-content: flex-end;
+      .box {
+        max-width: 550px;
+        margin-right: 20px;
+      }
+    }
+  }
+  .listBox {
+    margin: 100px 0;
+    perspective: 900px;
+    .box {
+      background: #fff;
+      padding: 50px 80px 60px;
+      margin-bottom: 35px;
+      color: #141212;
+      display: grid;
+      grid-template-columns: 60% auto;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 100px;
+      filter: brightness(1);
+      h2 {
+        font-size: 40px;
+        font-weight: normal;
+        letter-spacing: -2px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        grid-column: 1/3;
+        margin-bottom: 100px;
+      }
+      h3 {
+        font-size: 300px;
+        font-weight: bold;
+        line-height: 0.9;
+        align-self: flex-end;
+      }
+      .text {
+        align-self: flex-end;
+        line-height: 1.4;
+        h4 {
+          margin-bottom: 20px;
+          line-height: 1.2;
+        }
+        p {
+          opacity: 0.5;
+        }
+      }
+    }
+    .box.a h3 {
+      color: #e36840;
+    }
+    .box.b h3 {
+      color: #4772b1;
+    }
+    .box.c h3 {
+      color: #ffb84f;
+    }
+  }
+  .subTextBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .subText {
+      max-width: 600px;
+      font-size: 22px;
+      grid-column-start: 2;
+    }
+  }
+}
+
 /* 키프레임 */
 @keyframes opa {
   0% {
