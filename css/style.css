@@ -83,6 +83,7 @@ section {
   display: inline-block;
   cursor: pointer;
   text-transform: uppercase;
+  margin-top: 50px;
 }
 /** header */
 
@@ -186,8 +187,8 @@ header .gnb {
   .logoWrap {
     display: flex;
     justify-content: center;
+    gap: 10px;
     span {
-      width: 20%;
       img {
         width: 100%;
       }
@@ -243,6 +244,82 @@ header .gnb {
   top: 0;
   right: 0;
   animation: opa linear 2s 0s infinite;
+}
+
+/* con2 */
+.con2 {
+  .inner {
+    position: relative;
+    padding: 40px 50px;
+  }
+  .inner:before {
+    content: "";
+    width: 95%;
+    height: 1px;
+    background-color: #3b3b3b;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0%;
+  }
+  .mainTextBox {
+    position: relative;
+    span {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .title {
+      font-size: 120px;
+      line-height: 1;
+      letter-spacing: -5px;
+      text-align: right;
+      overflow: hidden;
+      i {
+        display: block;
+      }
+    }
+    .a {
+      align-self: flex-end;
+    }
+    .b {
+      margin-right: 400px;
+    }
+    .in {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+      .box {
+        max-width: 550px;
+        margin-right: 20px;
+        video {
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .subTextBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    .subText {
+      max-width: 600px;
+      font-size: 20px;
+      p:nth-child(1) {
+        margin-bottom: 20px;
+      }
+    }
+    .iconBox {
+      display: flex;
+      width: 300px;
+      gap: 20px;
+      li {
+        place-items: center;
+      }
+    }
+  }
 }
 
 /* 키프레임 */
