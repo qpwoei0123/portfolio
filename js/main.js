@@ -8,7 +8,7 @@ window.onload = function () {
 
   gsap.registerPlugin(ScrollTrigger); // ScrollTrigger 사용 준비
 
-  // gsap.to(요소, 옵션)
+  // 비주얼 섹션 애니메이션
   gsap
     .timeline({
       scrollTrigger: {
@@ -53,6 +53,7 @@ window.onload = function () {
       0
     );
 
+  // 메인텍스트 애니메이션
   gsap.utils.toArray(".mainTextBox .title i").forEach((el) => {
     gsap
       .timeline({
@@ -71,6 +72,7 @@ window.onload = function () {
       );
   });
 
+  // 서브텍스트 애니메이션
   gsap.utils.toArray(".subText p").forEach((el) => {
     gsap
       .timeline({
@@ -88,4 +90,18 @@ window.onload = function () {
         0
       );
   });
+
+  // textAni 애니메이션
+  let textAniList = document.querySelectorAll(".con1 .textAni li");
+  let textAni = gsap.timeline({ repeat: -1 });
+  for (let i = 0; i < textAniList.length; i++) {
+    textAni.to(textAniList[i], 0.8, {
+      opacity: 1,
+      repeat: 1,
+      yoyo: true,
+      ease: "power4.out",
+      delay: 0,
+      x: 0,
+    });
+  }
 };
