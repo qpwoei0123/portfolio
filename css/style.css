@@ -516,6 +516,104 @@ header .gnb {
     z-index: 100%;
   }
 }
+/* footer */
+footer {
+  position: relative;
+  overflow: hidden;
+  .inner {
+    height: 100vh;
+    padding: 75px 75px 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .box {
+      padding: 50px 0 0;
+      background: rgba(55, 55, 55, 0.4);
+      backdrop-filter: blur(100px);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      .mainTextBox {
+        text-align: center;
+        h2 {
+          font-size: 120px;
+          text-transform: uppercase;
+          letter-spacing: -1px;
+          font-weight: normal;
+          margin-bottom: 30px;
+        }
+        p span {
+          opacity: 0.5;
+          display: block;
+        }
+      }
+      .talkBtn {
+        display: grid;
+        place-items: center;
+        flex-grow: 1;
+        a {
+          display: block;
+          width: 95px;
+          height: 95px;
+          border-radius: 100%;
+          box-shadow: 0 0 0 13px #1c1c1c, 0 0 50px rgba(255, 255, 255, 0.3);
+          span {
+            display: block;
+            width: 95%;
+            height: 95%;
+            margin: 2.5% auto;
+            border-radius: 100%;
+            background: #e36840;
+            transition: all 0.3s;
+          }
+        }
+        a:hover span {
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+        }
+      }
+      .btnBox {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        .btn {
+          margin: 20px;
+          padding: 10px;
+          background: none;
+          color: #fff;
+          opacity: 0.5;
+        }
+        .btn:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .copyright {
+    flex-direction: row;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 14px;
+  }
+  .logoWrap {
+    position: absolute;
+    left: 0;
+    top: -50%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    span {
+      width: 16%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
 
 /* 키프레임 */
 @keyframes opa {
