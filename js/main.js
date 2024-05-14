@@ -104,4 +104,26 @@ window.onload = function () {
       x: 0,
     });
   }
+
+  // listBox 스크롤 애니메이션
+  gsap.utils.toArray(".con4 .listBox .box").forEach((el) => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "0% 20%",
+          end: "00% 0%",
+          scrub: 1,
+        },
+      })
+      .to(
+        el,
+        {
+          transform: "rotateX(-10deg) scale(0.9)",
+          transformOrigin: "top",
+          filter: "brightness(0.7)",
+        },
+        0
+      );
+  });
 };
