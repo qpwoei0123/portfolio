@@ -33,6 +33,7 @@ body {
   font-family: "Releway", sans-serif;
   font-size: 16px;
   letter-spacing: -0.01rem;
+  overflow-x: hidden;
 }
 .wrap {
   position: relative;
