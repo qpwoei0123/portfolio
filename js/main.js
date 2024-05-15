@@ -91,7 +91,7 @@ window.onload = function () {
       );
   });
 
-  // textAni 애니메이션
+  // con1 textAni 애니메이션
   let textAniList = document.querySelectorAll(".con1 .textAni li");
   let textAni = gsap.timeline({ repeat: -1 });
   for (let i = 0; i < textAniList.length; i++) {
@@ -105,8 +105,8 @@ window.onload = function () {
     });
   }
 
-  // listBox 스크롤 애니메이션
-  gsap.utils.toArray(".con4 .listBox .box").forEach((el) => {
+  // con4 listBox 스크롤 애니메이션
+  gsap.utils.toArray(".con4 .listBox .box").forEach((el, idx) => {
     gsap
       .timeline({
         scrollTrigger: {
@@ -119,6 +119,8 @@ window.onload = function () {
       .to(
         el,
         {
+          y: (idx % 2) * 20,
+          scale: 0.8 + idx * 0.1,
           transform: "rotateX(-10deg) scale(0.9)",
           transformOrigin: "top",
           filter: "brightness(0.7)",
@@ -126,4 +128,49 @@ window.onload = function () {
         0
       );
   });
+
+  // con3 listBox 스크롤 애니메이션
+  gsap.utils.toArray(".con3 .listBox li").forEach((el, idx) => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "50% bottom",
+          scrub: 1,
+        },
+      })
+      .fromTo(
+        el,
+        { opacity: 0, rotationY: "45deg" },
+        {
+          opacity: 1,
+          rotationY: "0deg",
+          ease: "none",
+          delay: (idx % 3) * 1,
+        },
+        0
+      );
+  });
+  // con5 listBox li 호버 이미지 애니메이션
+  let listBox = document.querySelectorAll(".con5 .listBox li");
+  let imgBox = document.querySelector(".con5 .imgBox");
+  let img = document.querySelector(".con5 .imgBox img");
+
+  for (let i = 0; i < listBox.length; i++) {
+    listBox[i].addEventListener("mouseover", () => {
+      img.src = `images/img${i}.jpg`;
+      gsap.set(imgBox, { scale: 0, opacity: 0, duration: 0.3 }),
+        gsap.to(imgBox, { scale: 1, opacity: 1, duration: 0.3 });
+    });
+    listBox[i].addEventListener("mousemove", (e) => {
+      let x = e.pageX + 20;
+      let y = e.pageY - 20;
+      imgBox.style.left = x + "px";
+      imgBox.style.top = y + "px";
+    });
+    listBox[i].addEventListener("mouseout", () => {
+      gsap.to(imgBox, { scale: 0, opacity: 0, duration: 0.3 });
+    });
+  }
 };
