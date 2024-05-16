@@ -2,6 +2,30 @@ window.onload = function () {
   const menuOpen = document.querySelector(".gnb .menuOpen");
   const menuBox = document.querySelector(".gnb .menuBox");
 
+  // loading 애니메이션
+  let loading = document.querySelector(".loading");
+  let rotate = document.querySelectorAll(".rotate");
+  let opacity = document.querySelectorAll(".opacity");
+
+  loading.classList.add("scene1");
+  setTimeout(() => {
+    loading.classList.add("scene2");
+  }, 1000);
+  setTimeout(() => {
+    loading.classList.remove("scene1", "scene2");
+    loading.classList.add("displayNone");
+  }, 2000);
+  setTimeout(() => {
+    rotate.forEach((el) => {
+      el.classList.add("on");
+    });
+  }, 2000);
+  setTimeout(() => {
+    opacity.forEach((el) => {
+      el.classList.add("on");
+    });
+  }, 2000);
+
   menuOpen.addEventListener("click", function () {
     menuBox.classList.toggle("on");
   });
@@ -218,31 +242,6 @@ window.onload = function () {
       },
       0
     );
-
-  // loading 애니메이션
-  let loading = document.querySelector(".loading");
-  let rotate = document.querySelectorAll(".rotate");
-  let opacity = document.querySelectorAll(".opacity");
-
-  setTimeout(() => {
-    loading.classList.add("scene1");
-  }, 0);
-  setTimeout(() => {
-    loading.classList.add("scene2");
-  }, 1000);
-  setTimeout(() => {
-    loading.classList.remove("scene1", "scene2");
-  }, 2000);
-  setTimeout(() => {
-    rotate.forEach((el) => {
-      el.classList.add("on");
-    });
-  }, 2000);
-  setTimeout(() => {
-    opacity.forEach((el) => {
-      el.classList.add("on");
-    });
-  }, 2000);
 
   // 페이지 로드 시에 바로 스크롤바를 숨깁니다.
   document.body.classList.add("hide-scrollbar");
