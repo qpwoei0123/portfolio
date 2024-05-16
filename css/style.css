@@ -726,6 +726,15 @@ body.hide-scrollbar::-webkit-scrollbar {
 body.hide-scrollbar {
   overflow: hidden;
 }
+::-webkit-scrollbar-thumb {
+  background-color: #ff764a; /* 스크롤바 색상 */
+}
+::-webkit-scrollbar-track {
+  background-color: #141212; /* 스크롤바 트랙 색상 */
+}
+::-webkit-scrollbar {
+  width: 5px; /* 스크롤바 너비 */
+}
 
 /* 키프레임 */
 @keyframes opa {
