@@ -39,7 +39,6 @@ body {
   position: relative;
   background-color: #141212;
   color: #fff;
-  padding-bottom: 1000px;
 }
 header {
   position: fixed;
@@ -86,6 +85,7 @@ section {
   text-transform: uppercase;
   margin-top: 50px;
 }
+
 /** header */
 
 header .gnb {
@@ -194,38 +194,61 @@ header .gnb {
         width: 100%;
       }
     }
+    .y {
+      z-index: 2;
+    }
+    .g {
+      z-index: 2;
+    }
   }
 }
 
 /* con1 */
-.con1 .box {
-  padding: 60px;
-  background-color: rgba(55, 55, 55, 0.4);
-  backdrop-filter: blur(100px);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 90px;
+.con1 {
+  .box {
+    padding: 60px;
+    background-color: rgba(55, 55, 55, 0.4);
+    backdrop-filter: blur(20px);
+  }
+  .textBox {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
   .mainText {
     font-size: 30px;
-    grid-row-start: 2;
+    width: 30vw;
+    z-index: 1;
+    .imgBox img {
+      width: 100%;
+    }
   }
-  .subText {
-    font-size: 20px;
-    grid-column-start: 2;
-    p {
-      margin-top: 14px;
+  .subTextBox {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 50px;
+    .subText {
+      font-size: 1rem;
+      p {
+        margin-top: 14px;
+      }
+      .icon {
+        font-size: 2rem;
+        margin-right: 10px;
+      }
     }
   }
 }
 
 .con1 .textAni {
-  margin-top: 14px;
+  margin-top: 50px;
   position: relative;
   ul {
     display: grid;
-    max-width: 800px;
+
     li {
-      font-size: 65px;
+      font-size: 2rem;
       text-transform: uppercase;
       letter-spacing: -1px;
       grid-row-start: 1;
@@ -235,7 +258,7 @@ header .gnb {
     }
   }
 }
-.con1 .textAni:before {
+/* .con1 .textAni:before {
   content: "";
   position: absolute;
   width: 100px;
@@ -245,7 +268,7 @@ header .gnb {
   top: 0;
   right: 0;
   animation: opa linear 2s 0s infinite;
-}
+} */
 
 /* con2 */
 .con2 {
@@ -342,7 +365,7 @@ header .gnb {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
-    perspective: 900px;
+    perspective: 9999px;
     li[data-color="a"] {
       --sub-color: #e1dbfd;
     }
@@ -420,7 +443,7 @@ header .gnb {
   }
   .listBox {
     margin: 100px 0;
-    perspective: 900px;
+    perspective: 999px;
     .box {
       background: #fff;
       padding: 50px 80px 60px;
@@ -524,31 +547,32 @@ header .gnb {
 footer {
   position: relative;
   overflow: hidden;
+  background: white;
   .inner {
     height: 100vh;
     padding: 75px 75px 25px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    z-index: 2;
+    position: relative;
     .box {
       padding: 50px 0 0;
       background: rgba(55, 55, 55, 0.4);
-      backdrop-filter: blur(100px);
+      backdrop-filter: blur(20px);
       border-radius: 10px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       .mainTextBox {
         text-align: center;
-        h2 {
+        flex-grow: 1;
+        p {
           font-size: 120px;
           text-transform: uppercase;
           letter-spacing: -1px;
           font-weight: normal;
           margin-bottom: 30px;
-        }
-        p span {
-          opacity: 0.5;
           display: block;
         }
       }
@@ -597,6 +621,8 @@ footer {
     }
   }
   .copyright {
+    padding: 10px;
+    color: black;
     flex-direction: row;
     text-align: center;
     padding-top: 25px;
