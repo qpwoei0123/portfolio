@@ -644,6 +644,84 @@ footer {
     }
   }
 }
+/* loading */
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #141212;
+  z-index: 9999;
+  display: none;
+  -webkit-scrollbar {
+    width: 0; /* Chrome, Safari, Opera */
+  }
+
+  .logo {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    gap: 2px;
+    span img {
+      width: 90%;
+    }
+  }
+}
+
+.loading.scene1 {
+  display: block;
+  .logo span {
+    animation-name: up;
+    animation-duration: 0.5s;
+  }
+}
+
+.loading.scene2 {
+  .logo span:nth-child(1) {
+    opacity: 0;
+    transition: 0.1s;
+  }
+  .logo span:nth-child(2) {
+    opacity: 0;
+    transition: 0.2s;
+  }
+  .logo span:nth-child(3) {
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .logo span:nth-child(4) {
+    opacity: 0;
+    transition: 0.4s;
+  }
+  .logo span:nth-child(5) {
+    opacity: 0;
+    transition: 0.5s;
+  }
+}
+
+.rotate.on {
+  animation-name: up;
+  animation-duration: 1s;
+}
+
+.opacity.on {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+/* media */
+body.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+}
+body.hide-scrollbar {
+  overflow: hidden;
+}
 
 /* 키프레임 */
 @keyframes opa {
@@ -655,5 +733,25 @@ footer {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

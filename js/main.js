@@ -218,4 +218,41 @@ window.onload = function () {
       },
       0
     );
+
+  // loading 애니메이션
+  let loading = document.querySelector(".loading");
+  let rotate = document.querySelectorAll(".rotate");
+  let opacity = document.querySelectorAll(".opacity");
+
+  setTimeout(() => {
+    loading.classList.add("scene1");
+  }, 0);
+  setTimeout(() => {
+    loading.classList.add("scene2");
+  }, 1000);
+  setTimeout(() => {
+    loading.classList.remove("scene1", "scene2");
+  }, 2000);
+  setTimeout(() => {
+    rotate.forEach((el) => {
+      el.classList.add("on");
+    });
+  }, 2000);
+  setTimeout(() => {
+    opacity.forEach((el) => {
+      el.classList.add("on");
+    });
+  }, 2000);
+
+  // 페이지 로드 시에 바로 스크롤바를 숨깁니다.
+  document.body.classList.add("hide-scrollbar");
+
+  // 2.5초 후에 스크롤바를 다시 보여줍니다.
+  setTimeout(function () {
+    document.body.classList.remove("hide-scrollbar");
+  }, 3000);
+  // 페이지 이동 시 스크롤바를 맨 위로 이동시킵니다.
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 };
