@@ -22,27 +22,27 @@ window.onload = function () {
     .to("h2", { opacity: 0, duration: 1 }, 1) // 1초에 h2의 투명도를 0으로 변경
     .to("h2 span", { color: "white", duration: 1 }, 0) // 1초에 h2의 span의 x값을 100으로 변경
     .to(
-      ".logoWrap #y",
+      ".logoWrap .y",
       { x: -150, y: 350, rotate: 20, ease: "none", duration: 5 },
       0
     )
     .to(
-      ".logoWrap #o",
+      ".logoWrap .o",
       { x: -50, y: 250, rotate: -50, ease: "none", duration: 5 },
       0
     )
     .to(
-      ".logoWrap #u",
+      ".logoWrap .u",
       { x: 0, y: 400, rotate: -5, ease: "none", duration: 5 },
       0
     )
     .to(
-      ".logoWrap #n",
+      ".logoWrap .n",
       { x: 100, y: 300, rotate: -10, ease: "none", duration: 5 },
       0
     )
     .to(
-      ".logoWrap #g",
+      ".logoWrap .g",
       {
         x: 150,
         y: 450,
@@ -95,7 +95,7 @@ window.onload = function () {
   let textAniList = document.querySelectorAll(".con1 .textAni li");
   let textAni = gsap.timeline({ repeat: -1 });
   for (let i = 0; i < textAniList.length; i++) {
-    textAni.to(textAniList[i], 0.8, {
+    textAni.to(textAniList[i], 2, {
       opacity: 1,
       repeat: 1,
       yoyo: true,
@@ -173,4 +173,49 @@ window.onload = function () {
       gsap.to(imgBox, { scale: 0, opacity: 0, duration: 0.3 });
     });
   }
+  // footer 애니메이션
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "footer",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 3,
+      },
+    })
+
+    .to(".logoWrap", { top: "20%", ease: "none", duration: 5 }, 0)
+    .to(
+      ".logoWrap .y",
+      { x: 0, y: 350, rotate: 0, ease: "none", scale: 1.2, duration: 5 },
+      0
+    )
+    .to(
+      ".logoWrap .o",
+      { x: 0, y: 250, rotate: 0, ease: "none", scale: 1.2, duration: 5 },
+      0
+    )
+    .to(
+      ".logoWrap .u",
+      { x: 0, y: 400, rotate: 0, ease: "none", scale: 1.2, duration: 5 },
+      0
+    )
+    .to(
+      ".logoWrap .n",
+      { x: 0, y: 300, rotate: 0, ease: "none", scale: 1.2, duration: 5 },
+      0
+    )
+    .to(
+      ".logoWrap .g",
+      {
+        x: 0,
+        y: 400,
+        rotate: 0,
+        ease: "none",
+        scale: 1.2,
+        duration: 5,
+      },
+      0
+    );
 };
